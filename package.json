@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon dist/main.js"
+    "dev": "nodemon dist/main.js",
+    "start-mongo": "docker start mongoDB"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^5.9.14",
     "restify": "^8.5.1"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.7.20",
     "@types/restify": "^8.4.2"
   }
 }
