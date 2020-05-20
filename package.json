@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "bcrypt": "^4.0.1",
     "mongoose": "^5.9.14",
-    "restify": "^8.5.1"
+    "restify": "^8.5.1",
+    "restify-errors": "^8.0.2"
   },
   "devDependencies": {
     "@types/mongoose": "^5.7.20",
-    "@types/restify": "^8.4.2"
+    "@types/restify": "^8.4.2",
+    "@types/restify-errors": "^4.3.3"
   }
 }
