@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose'
-import { environment } from '../common/environment'
 
 export interface MenuItem extends mongoose.Document {
     name: string;
@@ -35,4 +34,4 @@ const restaurantSchema = new mongoose.Schema({
     }
 })
 
-export const Restaurant = mongoose.model<Restaurant>('Restaurants', restaurantSchema);
+export const Restaurant = mongoose.model<Restaurant>('Restaurant', restaurantSchema);

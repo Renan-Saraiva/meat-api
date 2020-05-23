@@ -52,7 +52,7 @@ const hashPassword = (obj, next) => {
 }
 
 const saveMidlleware = function(next) {
-    const user: any = this;
+    const user: any = this; 
 
     if (!user.isModified('password'))
         next();
