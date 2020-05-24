@@ -13,14 +13,30 @@ class UsersRouter extends ModelRouter<User> {
         })
     }
 
+    findByEmail = (req, resp, next) => {
+        if(req.query.email){
+            User.findByEmail(req.query.email)
+                .then(user => {
+                    return user ? [user] : [];
+                })
+                .then(this.renderAll(resp, next))
+                .catch(next)
+        }
+        else
+            next();
+    }
+
     apllyRoutes(application: restify.Server) 
-    {        
-        application.get('/users', this.findAll);
-        application.get('/users/:id', [this.validateId, this.findById]);
-        application.put('/users/:id', [this.validateId, this.replace]);
-        application.del('/users/:id', [this.validateId, this.delete]);
-        application.post('/users', this.save);
-        application.patch('/users/:id', [this.validateId, this.update]);
+    {   
+        application.get(`${this.basePath}`, restify.plugins.conditionalHandler([
+            { version: '2.0.0', handler: [this.findByEmail, this.findAll] },
+            { version: '1.0.0', handler: this.findAll },
+        ]));
+        application.get(`${this.basePath}/:id`, [this.validateId, this.findById]);
+        application.put(`${this.basePath}/:id`, [this.validateId, this.replace]);
+        application.del(`${this.basePath}/:id`, [this.validateId, this.delete]);
+        application.post(`${this.basePath}`, this.save);
+        application.patch(`${this.basePath}/:id`, [this.validateId, this.update]);
     }
 }
 

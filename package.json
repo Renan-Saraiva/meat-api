@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/main.js",
-    "start-mongo": "docker start mongoDB"
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "docker-compose": "docker-compose -up -d",
+    "docker-start-meat-db": "docker start meat-db"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@types/mongoose": "^5.7.20",
     "@types/restify": "^8.4.2",
-    "@types/restify-errors": "^4.3.3"
+    "@types/restify-errors": "^4.3.3",
+    "typescript": "^3.9.2"
   }
 }

@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+    meat-db:
+        image: mongo
+        container_name: meat-db
+        restart: always
+        ports: [
+            "27017:27017"
+        ]
+        volumes:
+            - /data/meat-db:/data/db            
+    meat-api:
+        build: .
+        restart: always
+        ports: [
+            "3000:3000"
+        ]            
+        depends_on:
+            - meat-db
