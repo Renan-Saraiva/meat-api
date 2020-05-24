@@ -19,11 +19,11 @@ export class Server {
             }
         ) 
     }
-
     
     initDb() {
         (<any>mongoose).Promise = global.Promise;
         return mongoose.connect(environment.server.db.url, {
+            useCreateIndex: true,
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
@@ -53,5 +53,9 @@ export class Server {
                 reject(err);
             }
         })
+    }
+
+    shutdown() {
+        return mongoose.disconnect().then(() => this.application.close());
     }
 }

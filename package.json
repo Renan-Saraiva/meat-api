@@ -4,7 +4,7 @@
   "description": "API de restaurantes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
     "dev": "nodemon dist/main.js",
     "start": "node dist/main.js",
     "build": "tsc",
@@ -14,6 +14,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
     "bcrypt": "^4.0.1",
@@ -22,9 +26,14 @@
     "restify-errors": "^8.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "@types/mongoose": "^5.7.20",
     "@types/restify": "^8.4.2",
     "@types/restify-errors": "^4.3.3",
+    "@types/supertest": "^2.0.9",
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.0.0",
     "typescript": "^3.9.2"
   }
 }
