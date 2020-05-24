@@ -25,7 +25,8 @@ export class Server {
         return mongoose.connect(environment.server.db.url, {
             useCreateIndex: true,
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useFindAndModify: false //TODO
         });
     }
 

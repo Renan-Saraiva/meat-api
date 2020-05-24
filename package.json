@@ -4,7 +4,7 @@
   "description": "API de restaurantes",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "ts-node jest.startup.ts",
     "dev": "nodemon dist/main.js",
     "start": "node dist/main.js",
     "build": "tsc",
@@ -15,6 +15,9 @@
   "author": "",
   "license": "ISC",
   "jest": {
+    "globals": {
+      "address": "http://localhost:3001"
+    },
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
@@ -32,8 +35,10 @@
     "@types/restify-errors": "^4.3.3",
     "@types/supertest": "^2.0.9",
     "jest": "^26.0.1",
+    "jest-cli": "^26.0.1",
     "supertest": "^4.0.2",
     "ts-jest": "^26.0.0",
+    "ts-node": "^8.10.1",
     "typescript": "^3.9.2"
   }
 }

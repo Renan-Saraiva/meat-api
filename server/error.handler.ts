@@ -2,6 +2,8 @@ import * as restify from 'restify'
 
 export const handleError = (req: restify.Request , resp: restify.Response, err: any, done: any) => {
     
+    //TODO: Melhorar msg de erro
+
     switch(err.name) {
         case 'MongoError':
             if(err.code === 11000)

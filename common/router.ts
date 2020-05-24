@@ -22,7 +22,7 @@ export abstract class  Router extends EventEmitter  {
             else
                 throw new NotFoundError('Document not found');
 
-            return next();
+            return next(false);
         }
     };
 
@@ -37,6 +37,8 @@ export abstract class  Router extends EventEmitter  {
             }
             else
                 response.json(this.envelopeAll([], options));
+
+            return next(false);
         }
     };
 }
