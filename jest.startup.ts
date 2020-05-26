@@ -22,6 +22,16 @@ const beforeAllTest = (() => {
             .then(() => User.deleteMany({}).exec())
             .then(() => Review.deleteMany({}).exec())
             .then(() => Restaurant.deleteMany({}).exec())
+            .then(() => {
+                const user: User = new User({
+                    name: "admin",
+                    email: "admin@email.com",
+                    password: "123456",
+                    profiles: ["admin", "user"]
+                });
+
+                return user.save();
+            });
 })
 
 const afterAllTest = (() => {

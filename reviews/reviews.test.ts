@@ -4,6 +4,7 @@ import * as mongoose from 'mongoose'
 import * as request from 'supertest'
 
 let address: string = (<any>global).address
+let auth: string = (<any>global).auth
 
 test('get /reviews', ()=>{
   return request(address)
@@ -38,6 +39,7 @@ test('post /reviews', ()=>{
               user: new mongoose.Types.ObjectId(),
               restaurant: new mongoose.Types.ObjectId()
             })
+            .set('Authorization', auth)
             .then(response=>{
               expect(response.status).toBe(200)
               expect(response.body._id).toBeDefined()

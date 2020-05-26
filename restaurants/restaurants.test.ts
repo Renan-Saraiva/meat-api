@@ -3,6 +3,7 @@ import 'jest'
 import * as request from 'supertest'
 
 let address: string = (<any>global).address
+let auth: string = (<any>global).auth
 
 test('get /restaurants', ()=>{
   return request(address)
@@ -29,6 +30,7 @@ test('get /restaurants/aaaaa - not found', ()=>{
 test('post /restaurants', ()=>{
   return request(address)
             .post('/restaurants')
+            .set('Authorization', auth)
             .send({
               name: 'Burger House',
               menu: [{name: "Coke", price: 5}]
