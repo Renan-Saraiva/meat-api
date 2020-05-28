@@ -8,8 +8,9 @@
     "dev": "nodemon dist/main.js",
     "start": "node dist/main.js",
     "build": "tsc",
-    "docker-compose": "docker-compose -up -d",
-    "docker-start-meat-db": "docker start meat-db"
+    "docker-compose": "docker-compose up -d",
+    "docker-start-meat-db": "docker start meat-db",
+    "docker-run": "pm2 start ecosystem.config.js --env docker"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,7 @@
     "bcrypt": "^4.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.14",
+    "pm2": "^4.4.0",
     "restify": "^8.5.1",
     "restify-errors": "^8.0.2"
   },

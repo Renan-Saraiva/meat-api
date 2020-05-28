@@ -44,7 +44,7 @@ class UsersRouter extends ModelRouter<User> {
         application.get(`${this.basePath}/:id`, [authorize('admin'), this.validateId, this.findById]);
         application.put(`${this.basePath}/:id`, [authorize('admin','user'), this.validateId, this.replace]);
         application.del(`${this.basePath}/:id`, [authorize('admin'), this.validateId, this.delete]);
-        application.post(`${this.basePath}`, [authorize('admin'), this.save]);
+        application.post(`${this.basePath}`, [this.save]);
         application.patch(`${this.basePath}/:id`, [authorize('admin','user'), this.validateId, this.update]); //TODO: Validar se é o proprio usuário que está se altereando
         application.post(`${this.basePath}/authenticate`, authenticate);
     }

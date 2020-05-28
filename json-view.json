@@ -1,0 +1,50 @@
+{
+    "name": "meat-api-logger",
+    "hostname": "DESKTOP-8ULFMUU",
+    "pid": 14516,
+    "audit": true,
+    "component": "after",
+    "level": 30,
+    "remoteAddress": "::1",
+    "remotePort": 52486,
+    "req_id": "bc6a0c26-5da1-49ae-bbb6-f3a0a3c7d0f6",
+    "req": {
+        "query": {},
+        "method": "POST",
+        "url": "/users/authenticate",
+        "headers": {
+            "host": "localhost:5000",
+            "user-agent": "insomnia/7.1.1",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "content-length": "56"
+        },
+        "httpVersion": "1.1",
+        "trailers": {},
+        "version": "*",
+        "timers": {
+            "bunyan": 107,
+            "parseQueryString": 23,
+            "readBody": 365,
+            "parseBody": 37,
+            "use-3": 13,
+            "use-4": 17,
+            "handler-14": 78383
+        }
+    },
+    "res": {
+        "statusCode": 200,
+        "headers": {
+            "server": "meat-api",
+            "content-type": "application/json",
+            "content-length": 219
+        },
+        "trailer": false
+    },
+    "latency": 79,
+    "_audit": true,
+    "event": "after",
+    "msg": "handled: 200",
+    "time": "2020-05-28T02:25:54.111Z",
+    "v": 0
+}
