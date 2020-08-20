@@ -24,7 +24,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.14",
     "pm2": "^4.4.0",
